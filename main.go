@@ -34,6 +34,11 @@ func main() {
 	time.Sleep(2 * time.Second)
 	println("esp32-ex1")
 
+	// Scroll MANTY on the OLED while the radio comes up and while the
+	// push loop runs. The panel keeps its last picture across reset, so
+	// this also replaces the previous "MANTY WORLD!" frame.
+	go runManty(newDisplay())
+
 	link := connectWiFi()
 	if addr, err := link.Addr(); err == nil {
 		println("wifi ip:", addr.String())
