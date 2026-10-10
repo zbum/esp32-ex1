@@ -1,0 +1,10 @@
+dist/
+.env
+*.bin
+*.uf2
+*.elf
+.tinygo/
+.DS_Store
+
+.claude/
+.omc/
